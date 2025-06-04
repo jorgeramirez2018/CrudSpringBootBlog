@@ -1,6 +1,6 @@
-package com.example.tallerBlog.Services;
+package com.example.tallerBlog.Blog.Services;
 
-import com.example.tallerBlog.Model.Blog;
+import com.example.tallerBlog.Blog.Model.Blog;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

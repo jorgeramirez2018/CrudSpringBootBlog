@@ -1,9 +1,9 @@
-package com.example.tallerBlog.Model;
+package com.example.tallerBlog.Blog.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.tallerBlog.Autor.Model.AutorModel;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -17,15 +17,29 @@ public class Blog {
     private String contenido;
     private String fechaPublicacion;
 
+    @ManyToOne
+    @JoinColumn(name = "id_autor", nullable = false)
+    @JsonBackReference
+    private AutorModel autor;
+
     public Blog() {
     }
 
-    public Blog(Long id, String titulo, String categoria, String contenido, String fechaPublicacion) {
+    public Blog(Long id, String titulo, String categoria, String contenido, String fechaPublicacion, AutorModel autor) {
         this.id = id;
         this.titulo = titulo;
         this.categoria = categoria;
         this.contenido = contenido;
         this.fechaPublicacion = fechaPublicacion;
+        this.autor = autor;
+    }
+
+    public AutorModel getAutor() {
+        return autor;
+    }
+
+    public void setAutor(AutorModel autor) {
+        this.autor = autor;
     }
 
     public Long getId() {
@@ -52,12 +66,12 @@ public class Blog {
         this.categoria = categoria;
     }
 
-    public String getCotenido() {
+    public String getContenido() {
         return contenido;
     }
 
-    public void setCotenido(String cotenido) {
-        this.contenido = cotenido;
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
     public String getFechaPublicacion() {

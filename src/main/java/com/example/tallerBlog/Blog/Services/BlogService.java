@@ -1,7 +1,7 @@
-package com.example.tallerBlog.Services;
+package com.example.tallerBlog.Blog.Services;
 
-import com.example.tallerBlog.Model.Blog;
-import com.example.tallerBlog.Repository.BlogRepository;
+import com.example.tallerBlog.Blog.Model.Blog;
+import com.example.tallerBlog.Blog.Repository.BlogRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,7 +50,7 @@ public class BlogService implements BlogSer{
         if (blogExistente !=null){
             blogExistente.setTitulo(blogActualizado.getTitulo());
             blogExistente.setCategoria(blogActualizado.getCategoria());
-            blogExistente.setCotenido(blogActualizado.getCotenido());
+            blogExistente.setContenido(blogActualizado.getContenido());
             blogrepository.save(blogExistente);
         }else {
 

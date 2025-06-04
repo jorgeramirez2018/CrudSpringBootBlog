@@ -1,7 +1,7 @@
-package com.example.tallerBlog.Controller;
+package com.example.tallerBlog.Blog.Controller;
 
-import com.example.tallerBlog.Model.Blog;
-import com.example.tallerBlog.Services.BlogService;
+import com.example.tallerBlog.Blog.Model.Blog;
+import com.example.tallerBlog.Blog.Services.BlogService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
